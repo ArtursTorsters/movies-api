@@ -11,8 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
+
+                // broadcasts table with specific cols
         Schema::create('movie_broadcasts', function (Blueprint $table) {
-            $table->id();
+            $table->id();  
+            $table->foreignId('movie_id')->constrained('movies');
+            $table->unsignedTinyInteger('channel_nr');
+            $table->timestamp('broadcasts_at');
             $table->timestamps();
         });
     }
