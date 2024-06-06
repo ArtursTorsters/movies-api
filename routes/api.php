@@ -10,20 +10,14 @@ Route::get('/user', function (Request $request) {
     return $request->user();
 })->middleware('auth:sanctum');
 
-
-
 // get all movies
 Route::get('/movies', [MovieController::class, 'index']);
-
-// single movie by id
-Route::get('/movies/{id}', [MovieController::class, 'show']);
-
 // create movie
 Route::post('/movies', [MovieController::class, 'store']);
-
-//  drop movie 
+// single movie by id
+Route::get('/movies/{id}', [MovieController::class, 'show']);
+//  drop movie
 Route::delete('/movies/{id}', [MovieController::class, 'destroy']);
-
-// adding new broadcast
-Route::post('/movie-broadcasts', [MovieBroadcastController::class, 'store']);
+// add broadcast to a movie
+Route::post('/movies/{id}/broadcasts', [MovieBroadcastController::class, 'store']);
 

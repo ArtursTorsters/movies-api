@@ -1,7 +1,5 @@
 <?php
 
-// app/Models/Movie.php
-
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -14,7 +12,7 @@ class Movie extends Model
       // columns to fill
     protected $fillable = ['title', 'rating', 'age_restriction', 'description', 'premieres_at'];
 
-    // multi broadcasts for movie on differenct channels
+    // broadcasts
     public function broadcasts()
     {
         return $this->hasMany(MovieBroadcast::class);

@@ -12,9 +12,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-
-
-        // movie table with specific cols
+         // movie table with specific cols
         Schema::create('movies', function (Blueprint $table) {
             $table->id();
             $table->string('title', 100);
